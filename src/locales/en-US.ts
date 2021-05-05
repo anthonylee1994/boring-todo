@@ -1,6 +1,6 @@
 export default {
   "lang.code": "Eng",
-  "app.title": "TODO",
+  "app.title": "Boring TODO",
   "new.board": "New Board",
   "new.task": "New Task",
   "add.task": "Add Task",

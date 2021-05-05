@@ -1,6 +1,6 @@
 export default {
   "lang.code": "中",
-  "app.title": "事項清單",
+  "app.title": "悶事項清單",
   "new.board": "新記事板",
   "new.task": "新事項",
   "add.task": "新增事項",

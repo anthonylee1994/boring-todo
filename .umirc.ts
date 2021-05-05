@@ -7,6 +7,7 @@ export default defineConfig({
     htmlSuffix: true,
     dynamicRoot: true,
   },
+  favicon: "./icon-48x48.png",
   pwa: {
     src: "./manifest.json",
     hash: true,
@@ -18,7 +19,7 @@ export default defineConfig({
   nodeModulesTransform: {
     type: "none",
   },
-  title: "\u60b6\u4e8b\u9805\u6e05\u55ae",
+  title: "悶事項清單",
   fastRefresh: {},
   theme: {
     "primary-color": "#faad14",
