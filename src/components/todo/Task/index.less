@@ -7,8 +7,7 @@
   animation: zoom-in 300ms 1 alternate ease-in-out;
 
   &.completed {
-    opacity: 0.8;
-    transform: perspective(1000px) rotateY(15deg);
+    opacity: 0.5;
   }
 
   &.deleting {
@@ -16,8 +15,8 @@
   }
 }
 
-.completed > .anticon {
-  color: @gold-6 !important;
+.completed>.anticon {
+  color: @gold-6  !important;
 }
 
 .task-name {
@@ -27,5 +26,24 @@
 
   &.completed {
     text-decoration: line-through;
+  }
+}
+
+
+.checkIcon {
+
+  &.checked {
+    background: #73d13d;
+    border-radius: 100%;
+    padding: 2px;
+    width: 22px !important;
+    height: 22px !important;
+
+    svg {
+      position: relative;
+      fill: white;
+      font-size: 16px;
+      stroke: 2px;
+    }
   }
 }

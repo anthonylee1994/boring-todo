@@ -51,7 +51,12 @@ const Task: React.FunctionComponent<any> = () => {
           <DownOutlined onClick={() => moveDown(task.uuid)} />
         </Tooltip>,
         <Tooltip key="check" title={formatMessage({ id: "mark.completed" })}>
-          <CheckOutlined onClick={onToggleComplete} />
+          <CheckOutlined
+            className={classNames(styles.checkIcon, {
+              [styles.checked]: task.completed,
+            })}
+            onClick={onToggleComplete}
+          />
         </Tooltip>,
         <Tooltip key="edit" title={formatMessage({ id: "edit.task" })}>
           <EditOutlined onClick={editDialog.open} />
