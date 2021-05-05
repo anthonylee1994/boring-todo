@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./index.less";
 import { Card, Tooltip, Typography } from "antd";
 import {
@@ -25,9 +25,13 @@ const Board: React.FunctionComponent<any> = () => {
   const board = useContext(BoardContext);
   const { tasks, addTask, allTaskCompleted } = useBoard();
   const editDialog = useDialog();
+  const [isDeleting, setDeleting] = useState(false);
 
   const onDelete = () => {
-    todo.deleteBoard(board.uuid);
+    setDeleting(true);
+    setTimeout(() => {
+      todo.deleteBoard(board.uuid);
+    }, 300);
   };
 
   return (
@@ -37,12 +41,14 @@ const Board: React.FunctionComponent<any> = () => {
           className={classNames(styles.title, {
             [styles.completed]: allTaskCompleted && tasks.length > 0,
           })}
+          onClick={editDialog.open}
         >
           {board.title || formatMessage({ id: "new.task" })}
         </Typography.Title>
       }
       className={classNames(styles.root, {
         [styles.completed]: allTaskCompleted && tasks.length > 0,
+        [styles.deleting]: isDeleting,
       })}
       actions={[
         <Tooltip key="up" title={formatMessage({ id: "move.up" })}>

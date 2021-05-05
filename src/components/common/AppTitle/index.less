@@ -1,3 +1,5 @@
+@import "../../../global.less";
+
 .root {
   margin-top: 16px;
   display: block;
@@ -5,6 +7,8 @@
   transition: all 500ms ease-in-out;
   cursor: pointer;
   z-index: 12;
+  animation: zoom-in 300ms 1 alternate ease-in-out;
+  user-select: none;
 
   @media screen and (max-width: 575px) {
     font-size: 24px !important;
